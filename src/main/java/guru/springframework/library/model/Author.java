@@ -3,10 +3,7 @@ package guru.springframework.library.model;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Set;
 
 @Entity
@@ -20,6 +17,7 @@ public class Author {
     @Getter @Setter
     private String lastName;
     @Getter @Setter
+    @ManyToMany(mappedBy = "authorSet")
     private Set<Book> bookSet;
 
     public Author(){}

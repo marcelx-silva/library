@@ -3,10 +3,7 @@ package guru.springframework.library.model;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Set;
 @Entity
 public class Book {
@@ -19,6 +16,10 @@ public class Book {
     @Getter @Setter
     private String isbn;
     @Getter @Setter
+    @ManyToMany
+    @JoinTable(     name = "author_book",
+                    joinColumns = @JoinColumn(name = "book_id"),
+                    inverseJoinColumns = @JoinColumn(name = "author_id"))
     private Set<Author> authorSet;
 
     public Book(){}
