@@ -25,6 +25,11 @@ public class Book {
 
     public Book(){}
 
+    public Book(String title, String isbn){
+        this.title = title;
+        this.isbn = isbn;
+    }
+
     public Book(Long id,String title,String isbn,Set<Author> authorSet){
         this.id = id;
         this.title = title;
