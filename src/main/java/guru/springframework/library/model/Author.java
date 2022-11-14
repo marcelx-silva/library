@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
@@ -19,7 +20,7 @@ public class Author {
     private String lastName;
     @Getter @Setter
     @ManyToMany(mappedBy = "authorSet")
-    private Set<Book> bookSet;
+    private Set<Book> bookSet = new HashSet<>();
 
     public Author(){}
 
