@@ -1,13 +1,14 @@
-package guru.springframework.library.controller;
+package guru.springframework.library.controller.greeting;
 
 import guru.springframework.library.service.greeting.GreetingService;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 
 @Controller
-public class GreetingController {
+public class GreetingEnglishController {
     private final GreetingService greetingService;
 
-    public GreetingController(GreetingService greetingService){
+    public GreetingEnglishController(@Qualifier("greetingServiceEnglish") GreetingService greetingService){
         this.greetingService = greetingService;
     }
 
