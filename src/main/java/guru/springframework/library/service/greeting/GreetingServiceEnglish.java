@@ -6,6 +6,6 @@ import org.springframework.stereotype.Service;
 @Service
 public class GreetingServiceEnglish implements GreetingService {
     public String sayGreeting() {
-        return "Hello, World";
+        return "Hello, how are you?";
     }
 }
